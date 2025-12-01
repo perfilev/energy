@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy — Форум-группа для предпринимателей</title>
     <meta name="description" content="Закрытая форум-группа про личное состояние, жизненную стратегию и рост бизнеса. 8 участников, 10 встреч в год, глубокая работа с модератором.">
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,90 +29,93 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         body {
             font-family: 'Onest', sans-serif;
         }
-        
-        h1, h2, h3, .font-display {
+
+        h1,
+        h2,
+        h3,
+        .font-display {
             font-family: 'Unbounded', sans-serif;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #FF2157 0%, #FF6B8A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hero-gradient {
-            background: linear-gradient(180deg, rgba(255,33,87,0.03) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(180deg, rgba(255, 33, 87, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
         }
-        
+
         .card-hover {
             transition: all 0.3s ease;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
-        
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
         }
-        
+
         .faq-item.open .faq-answer {
             max-height: 500px;
         }
-        
+
         .faq-item.open .faq-icon {
             transform: rotate(180deg);
         }
-        
+
         .faq-icon {
             transition: transform 0.3s ease;
         }
-        
+
         .image-cover {
             object-fit: cover;
             object-position: center;
         }
-        
+
         .accent-line {
             width: 60px;
             height: 4px;
             background: #FF2157;
             border-radius: 2px;
         }
-        
+
         .stat-card {
             background: linear-gradient(135deg, #FAFAFA 0%, #FFFFFF 100%);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         .timeline-dot {
             width: 12px;
             height: 12px;
@@ -115,7 +123,7 @@
             border-radius: 50%;
             position: relative;
         }
-        
+
         .timeline-dot::before {
             content: '';
             position: absolute;
@@ -124,10 +132,10 @@
             transform: translate(-50%, -50%);
             width: 24px;
             height: 24px;
-            background: rgba(255,33,87,0.15);
+            background: rgba(255, 33, 87, 0.15);
             border-radius: 50%;
         }
-        
+
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -135,7 +143,7 @@
             overflow: hidden;
             border-radius: 16px;
         }
-        
+
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -143,30 +151,53 @@
             width: 100%;
             height: 100%;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         .float-animation {
             animation: float 6s ease-in-out infinite;
         }
     </style>
-    
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105595352', 'ym');
-        ym(105595352, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=105595352', 'ym');
+        ym(105595352, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: "dataLayer",
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/105595352" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/105595352" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
+
 <body class="bg-white text-gray-900 antialiased">
 
     <!-- Navigation -->
@@ -174,8 +205,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="#" class="font-display font-bold text-xl tracking-tight flex items-center gap-2">
-                    <i data-lucide="zap" class="w-6 h-6 text-accent fill-accent"></i>
-                    <span class="text-accent">Energy</span>
+                    <img src="/images/logo.png" alt="Energy" class="h-8 w-auto">
                 </a>
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                     <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">О группе</a>
@@ -323,7 +353,7 @@
                     Участники группы — предприниматели со схожими ценностями и&nbsp;готовностью работать над собой
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-2xl p-6 card-hover fade-in">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
@@ -332,7 +362,7 @@
                     <h3 class="font-semibold text-lg mb-2">Бизнес от 200 млн ₽</h3>
                     <p class="text-gray-600">Участники с выручкой от 200 млн рублей в год, с опытом управления и масштабирования</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl p-6 card-hover fade-in">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="heart" class="w-6 h-6 text-accent"></i>
@@ -340,7 +370,7 @@
                     <h3 class="font-semibold text-lg mb-2">Семья и дети</h3>
                     <p class="text-gray-600">Средний возраст около 40 лет. Как правило, есть семья и дети — это важный контекст</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl p-6 card-hover fade-in">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="compass" class="w-6 h-6 text-accent"></i>
@@ -348,7 +378,7 @@
                     <h3 class="font-semibold text-lg mb-2">Нужна ясность</h3>
                     <p class="text-gray-600">Ощущение, что бизнес мог бы расти быстрее, но не хватает ясности и энергии</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl p-6 card-hover fade-in">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="target" class="w-6 h-6 text-accent"></i>
@@ -356,7 +386,7 @@
                     <h3 class="font-semibold text-lg mb-2">Фокус и цели</h3>
                     <p class="text-gray-600">Нужны коллективные целеполагания и помощь в удержании фокуса на важном</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl p-6 card-hover fade-in">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="handshake" class="w-6 h-6 text-accent"></i>
@@ -364,7 +394,7 @@
                     <h3 class="font-semibold text-lg mb-2">Готов вкладываться</h3>
                     <p class="text-gray-600">Желание не только брать, но и помогать другим участникам своим опытом</p>
                 </div>
-                
+
                 <div class="bg-white rounded-2xl p-6 card-hover fade-in">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="check-circle" class="w-6 h-6 text-accent"></i>
@@ -388,7 +418,7 @@
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
                         Каждая встреча длится 8&nbsp;часов. Это даёт глубину и&nbsp;время на&nbsp;проработку запросов и&nbsp;развивающей темы.
                     </p>
-                    
+
                     <div class="space-y-6">
                         <div class="flex gap-4">
                             <div class="flex flex-col items-center">
@@ -400,7 +430,7 @@
                                 <div class="text-gray-600 text-sm">Короткая обратная связь, кто «как дошёл»</div>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-4">
                             <div class="flex flex-col items-center">
                                 <div class="timeline-dot"></div>
@@ -411,7 +441,7 @@
                                 <div class="text-gray-600 text-sm">Каждый формирует, что для него важно сейчас</div>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-4">
                             <div class="flex flex-col items-center">
                                 <div class="timeline-dot"></div>
@@ -422,7 +452,7 @@
                                 <div class="text-gray-600 text-sm">Модератор работает с выбранными темами</div>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-4">
                             <div class="flex flex-col items-center">
                                 <div class="timeline-dot"></div>
@@ -433,7 +463,7 @@
                                 <div class="text-gray-600 text-sm">Жизненная стратегия, принципы, цели, мотивация</div>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-4">
                             <div class="flex flex-col items-center">
                                 <div class="timeline-dot"></div>
@@ -445,12 +475,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="fade-in space-y-6">
                     <div class="rounded-3xl overflow-hidden">
                         <img src="/images/4.jpg" alt="Упражнение на встрече Energy" class="w-full h-[300px] image-cover">
                     </div>
-                    
+
                     <div class="bg-gray-50 rounded-2xl p-6">
                         <h4 class="font-semibold mb-4 flex items-center gap-2">
                             <i data-lucide="message-circle" class="w-5 h-5 text-accent"></i>
@@ -489,18 +519,18 @@
                         <img src="/images/5.jpg" alt="Модератор Максим Голубь" class="w-full h-[400px] image-cover">
                     </div>
                 </div>
-                
+
                 <div class="fade-in">
                     <div class="accent-line mb-6"></div>
                     <h2 class="font-display text-3xl md:text-4xl font-bold mb-2">
                         Максим Голубь
                     </h2>
                     <p class="text-lg text-accent font-medium mb-6">Модератор группы</p>
-                    
+
                     <p class="text-lg text-gray-600 leading-relaxed mb-6">
                         Предприниматель и&nbsp;психолог. Опытный модератор групп развития. Сочетает большой бизнес-опыт и&nbsp;психологию развития.
                     </p>
-                    
+
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="stat-card rounded-xl p-4 text-center">
                             <div class="font-display text-2xl font-bold text-accent">400+</div>
@@ -511,14 +541,14 @@
                             <div class="text-sm text-gray-600">ретритов</div>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center gap-3 text-gray-600">
                         <i data-lucide="award" class="w-5 h-5 text-accent"></i>
                         <span>Резидент бизнес-клуба «Атланты» с момента основания</span>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Video -->
             <div class="mt-16 fade-in">
                 <div class="text-center mb-8">
@@ -531,7 +561,7 @@
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-20 h-20 md:w-24 md:h-24 bg-accent rounded-full flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110">
                             <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z"/>
+                                <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
                     </div>
@@ -552,7 +582,7 @@
                     Раз в&nbsp;год выездной ретрит на&nbsp;2–3&nbsp;дня вне Москвы. Вырваться из&nbsp;рутины, перезагрузиться и&nbsp;спланировать следующий год.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="fade-in">
                     <div class="rounded-3xl overflow-hidden relative group">
@@ -564,7 +594,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="fade-in">
                     <div class="rounded-3xl overflow-hidden relative group">
                         <img src="/images/6.jpg" alt="Ретрит Energy" class="w-full h-[350px] image-cover transition-transform duration-500 group-hover:scale-105">
@@ -576,7 +606,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="mt-12 grid md:grid-cols-3 gap-6 fade-in">
                 <div class="text-center p-6">
                     <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -585,7 +615,7 @@
                     <h4 class="font-semibold mb-2">Вырваться из контекста</h4>
                     <p class="text-gray-600 text-sm">Отойти от московской рутины и привычного окружения</p>
                 </div>
-                
+
                 <div class="text-center p-6">
                     <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="battery-charging" class="w-7 h-7 text-accent"></i>
@@ -593,7 +623,7 @@
                     <h4 class="font-semibold mb-2">Перезагрузиться</h4>
                     <p class="text-gray-600 text-sm">Получить новую энергию и свежий взгляд на ситуацию</p>
                 </div>
-                
+
                 <div class="text-center p-6">
                     <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="calendar-check" class="w-7 h-7 text-accent"></i>
@@ -617,7 +647,7 @@
                     Если ты год стабильно в&nbsp;группе, с&nbsp;большой вероятностью получишь:
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10 card-hover fade-in">
                     <div class="flex items-start gap-4">
@@ -630,7 +660,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10 card-hover fade-in">
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
@@ -642,7 +672,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10 card-hover fade-in">
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
@@ -654,7 +684,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10 card-hover fade-in">
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
@@ -666,7 +696,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10 card-hover fade-in md:col-span-2">
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
@@ -691,7 +721,7 @@
                     <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">
                         Атмосфера Energy
                     </h2>
-                    
+
                     <div class="flex flex-wrap gap-3 mb-8">
                         <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">Честная</span>
                         <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">Тёплая</span>
@@ -699,13 +729,13 @@
                         <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">Глубокая</span>
                         <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">Структурная</span>
                     </div>
-                    
+
                     <blockquote class="border-l-4 border-accent pl-6 py-2 mb-8">
                         <p class="text-lg text-gray-700 italic leading-relaxed">
                             «Это как сеанс с&nbsp;психологом или разговор с&nbsp;очень близким человеком, только в&nbsp;кругу предпринимателей, которые понимают твой контекст»
                         </p>
                     </blockquote>
-                    
+
                     <div class="space-y-4">
                         <p class="text-gray-600">После встреч участники обычно отмечают:</p>
                         <div class="flex flex-wrap gap-4">
@@ -724,7 +754,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="fade-in">
                     <div class="rounded-3xl overflow-hidden shadow-xl">
                         <img src="/images/2.jpg" alt="Атмосфера Energy" class="w-full h-[450px] image-cover">
@@ -746,12 +776,12 @@
                     Отбор обоюдный и&nbsp;щепетильный. Важно совпадение по&nbsp;ценностям и&nbsp;готовность вкладываться в&nbsp;других.
                 </p>
             </div>
-            
+
             <div class="max-w-3xl mx-auto">
                 <div class="relative">
                     <!-- Timeline line -->
                     <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block"></div>
-                    
+
                     <div class="space-y-8">
                         <div class="flex gap-6 fade-in">
                             <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center flex-shrink-0 text-white font-display font-bold text-xl relative z-10">
@@ -762,7 +792,7 @@
                                 <p class="text-gray-600">Напишите коммьюнити-менеджеру Анастасии. Она запросит информацию о вас и ответит на вопросы о группе.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-6 fade-in">
                             <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center flex-shrink-0 text-white font-display font-bold text-xl relative z-10">
                                 2
@@ -772,7 +802,7 @@
                                 <p class="text-gray-600">30 минут с участием всех членов группы. Знакомство, представление, вопросы с обеих сторон.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-6 fade-in">
                             <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center flex-shrink-0 text-white font-display font-bold text-xl relative z-10">
                                 3
@@ -784,7 +814,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-12 bg-white rounded-2xl p-6 fade-in">
                     <h4 class="font-semibold mb-4 flex items-center gap-2">
                         <i data-lucide="check-square" class="w-5 h-5 text-accent"></i>
@@ -818,7 +848,7 @@
                     Частые вопросы
                 </h2>
             </div>
-            
+
             <div class="space-y-4">
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
@@ -829,7 +859,7 @@
                         <p class="text-gray-600">Мы работаем в расширенном формате: встречи идут 8 часов вместо стандартных 4, и мы доплачиваем за профессионального модератора. Это даёт глубину и время на проработку как запросов, так и общей развивающей темы.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
                         <span class="font-semibold pr-4">Это больше про бизнес или личное?</span>
@@ -839,7 +869,7 @@
                         <p class="text-gray-600">Запрос формирует каждый участник. На разбор выносится всё, что сейчас важно в жизни: бизнес, личное, семья, здоровье, мотивация, стратегия.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
                         <span class="font-semibold pr-4">Где проходят встречи?</span>
@@ -849,7 +879,7 @@
                         <p class="text-gray-600">Обычно в Доме Атлантов или поблизости. Дата встречи выбирается голосованием участников.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
                         <span class="font-semibold pr-4">Зачем встреча 8 часов?</span>
@@ -859,7 +889,7 @@
                         <p class="text-gray-600">Чтобы собрать обратную связь и запросы, подробно их разобрать, и чтобы модератор успел дать общую тему, которая интересна большинству: жизненная стратегия, принципы, цели, способы общения и т.д.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
                         <span class="font-semibold pr-4">Не слишком ли это расширенный формат?</span>
@@ -869,7 +899,7 @@
                         <p class="text-gray-600">8 часов — действительно более глубокий формат, чем стандартные 4. По опыту тех, кто проходил разные группы и форматы, такой день окупается глубиной и эффектом: успеваешь не только проговорить, но и реально переосмыслить и перезапланировать.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
                         <span class="font-semibold pr-4">Я не хочу всё рассказывать о себе</span>
@@ -879,7 +909,7 @@
                         <p class="text-gray-600">Каждый сам выбирает уровень откровенности. Никто не давит и не вытягивает информацию насильно — группа создаёт безопасное пространство, а не принуждение.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden fade-in">
                     <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left">
                         <span class="font-semibold pr-4">Я не дотягиваю до других участников</span>
@@ -903,14 +933,14 @@
                 <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
                     Напишите нашему коммьюнити-менеджеру Анастасии в&nbsp;Telegram. Она расскажет подробнее и&nbsp;ответит на&nbsp;все вопросы.
                 </p>
-                
+
                 <a href="https://t.me/NastyaGraba_atlanty" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:scale-105 mb-8">
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                     </svg>
                     <span>Написать @NastyaGraba_atlanty</span>
                 </a>
-                
+
                 <p class="text-gray-500 text-sm">
                     Анастасия запросит необходимую информацию и&nbsp;организует знакомство с&nbsp;группой
                 </p>
@@ -923,8 +953,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="font-display font-bold text-xl flex items-center gap-2">
-                    <i data-lucide="zap" class="w-6 h-6 text-accent fill-accent"></i>
-                    <span class="text-accent">Energy</span>
+                    <img src="/images/logo.png" alt="Energy" class="h-8 w-auto">
                 </div>
                 <div class="text-gray-500 text-sm">
                     Форум-группа бизнес-клуба «Атланты»
@@ -940,14 +969,14 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
-        
+
         // Fade in animation on scroll
         const observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.1
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -955,29 +984,29 @@
                 }
             });
         }, observerOptions);
-        
+
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-        
+
         // FAQ accordion
         document.querySelectorAll('.faq-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.closest('.faq-item');
                 const isOpen = faqItem.classList.contains('open');
-                
+
                 // Close all other FAQ items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('open');
                 });
-                
+
                 // Toggle current item
                 if (!isOpen) {
                     faqItem.classList.add('open');
                 }
             });
         });
-        
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -987,7 +1016,7 @@
                     const headerOffset = 80;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
+
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
@@ -997,4 +1026,5 @@
         });
     </script>
 </body>
+
 </html>
