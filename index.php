@@ -206,6 +206,7 @@
             <div class="flex items-center justify-between h-16">
                 <a href="#" class="font-display font-bold text-xl tracking-tight flex items-center gap-2">
                     <img src="/images/logo.png" alt="Energy" class="h-8 w-auto">
+                    <span class="text-accent">Energy</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                     <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">О группе</a>
@@ -954,6 +955,7 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="font-display font-bold text-xl flex items-center gap-2">
                     <img src="/images/logo.png" alt="Energy" class="h-8 w-auto">
+                    <span class="text-accent">Energy</span>
                 </div>
                 <div class="text-gray-500 text-sm">
                     Форум-группа бизнес-клуба «Атланты»
